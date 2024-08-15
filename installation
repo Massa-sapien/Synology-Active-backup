@@ -1,0 +1,56 @@
+
+
+#1.Pobierz pakiet za pomocą polecenia które zmieni nazwę pobieranego pliku na syno.zip
+
+wget -c https://global.synologydownload.com/download/Utility/ActiveBackupBusinessAgent/2.7.0-3218/Linux/x86_64/Synology%20Active%20Backup%20for%20Business%20Agent-2.7.0-3218-x64-deb.zip -O syno.zip
+
+#2. Zainstaluj funkcję Unzip: 
+
+sudo apt install unzip
+
+#3. Wypakuj 
+
+sudo unzip syno.zip
+
+#4. Uruchom instalację poleceniem: 
+
+sudo ./install.run
+
+#5. Po zakończonej instalacji uruchom polecenie: 
+
+abb-cli -c
+
+#6. Wprowadź poświadczenia
+
+
+
+#Kilka dodatkowych poleceń:
+
+#Polecenie	Opis
+-c
+#przykład: abb-cli -c [Opcje połączenia]	Połącz z serwerem Synology NAS.
+-r
+#przykład: abb-cli -r [Opcje połączenia]	Ponownie połącz się z serwerem Synology NAS lub edytuj połączenie.
+-l
+#przykład: abb-cli -l [Opcje połączenia]	Rozłącz się z serwerem Synology NAS. Aby odłączyć urządzenie od serwera, wymagane są uprawnienia menedżera pakietów.
+-s
+#przykład: abb-cli -s [Opcje połączenia]	Wyświetl ostatni stan usługi tworzenia kopii zapasowych i połączenia między urządzeniem a serwerem Synology NAS. Dostępne będzie również łącze do Portalu odzyskiwania.
+-h
+#przykład: abb-cli -h	Wyświetl dostępne opcje sterowania.
+-v
+#przykład: abb-cli -v	Sprawdź bieżącą wersja agenta.
+-q
+#przykład: abb-cli -q	Zmień ustawienia powiadomień, aby wysyłać tylko monity i powiadomienia o błędach.
+
+
+
+#Jeśli z jakichś względów masz problem uruchom poniższe polecenie aby usunąć pakiet i przeprowadź proces jeszcze raz:
+
+apt remove synology-active-backup-business-linux-service
+
+
+
+
+
+
+
